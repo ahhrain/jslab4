@@ -1,4 +1,5 @@
 ﻿<html>
+
 <head>
     <style>
         h1 {
@@ -26,19 +27,25 @@
     </style>
     <script>
         function hello() {
+            var surname = document.getElementById('surname');
             var name = document.getElementById('name');
-            var friend = document.getElementById('friend');
-            var surpr = document.getElementById('surpr');
+            var sec_name = document.getElementById('sec_name');
+            var date = document.getElementById('date');
+            var city = document.getElementById('city');
             var like = document.getElementById('like');
+            var dislike = document.getElementById('dislike');
+            surname = surname.value;
             name = name.value;
-            friend = friend.value;
-            surpr = surpr.value;
+            sec_name = sec_name.value;
+            date = date.value;
+            city = city.value;
             like = like.value;
+            dislike = dislike.value;
             var win = window.open("", "", "width=500,height=600");
             win.document.open();
-            var str = ('<h2>' + name + " и " + surpr + '</h2>');
+            var str = ("Я " + surname + " " + name + " " + sec_name + " родился в " + date + " году в городе " + city + '<br>');
             win.document.write(str);
-            str = ("В одном лесу жила маленькая " + name + ", которая очень любила " + like + " чудесные песни. У нее так хорошо получалось, что весь лес собирался послушать ее! От сороки она узнала, что у людей принято дарить " + surpr + " любимым исполнителям. А " + surpr + " она любила так же сильно, как и " + like + ". Долго грустила " + name + ". Но однажды, после очередного импровизированного концерта, " + friend + " подлетел к " + name + " и подарил ей..." + surpr + "! Уж он то был истинным джентльменом! " + name + ' была невероятно счастлива!!!<br>');
+            str = ("Больше всего я люблю " + like + " и очень не люблю " + dislike + ". Было бы замечательно всю жизнь только " + like + " , но, к сожалению, приходится иногда и " + dislike + '.<br>');
             win.document.write(str);
             str = '<input type="button" value="Закрыть"' +
                 'onClick="window.close();">';
@@ -47,16 +54,21 @@
         }
     </script>
 </head>
+
 <body>
-    <h1>Генератор сказок</h1>
+    <h1>Анкета</h1>
     <hr>
     <form>
-       <label for="name">Имя </label><input type=text value="пташка" name="name" id='name' size="30"><br>
-       <label for="like">Любимое занятие </label><input type=text value="петь" name="like" id='like' size="30"><br>
-       <label for="friend">Друг героя</label> <input type=text value="дятел" name="friend" id='friend' size="30"><br>
-       <label for="surpr">Любимый подарок </label><input type=text value="цветы" name="surpr" id='surpr' size="30"><br>
-       <input type=button value="Генерировать сказку" OnClick="hello()">
-    <hr>
+        <label for="surname"> Фамилия </label><input type=text value="Горбунков" name="surname" id='surname' size="30"><br>
+        <label for="name">Имя </label><input type=text value="Семен" name="name" id='name' size="30"><br>
+        <label for="sec_name">Отчество</label> <input type=text value="Семенович" name="sec_name" id='sec_name' size="30"><br>
+        <label for="date">Год рождения </label><input type=text value="1990" name="date" id='date' size="30"><br>
+        <label for="city">Город рождения </label><input type=text value="Одесса" name="city" id='city' size="30"><br>
+        <label for="like">Любимое занятие </label><input type=text value="читать" name="like" id='like' size="30"><br>
+        <label for="dislike">Нелюбимое занятие </label><input type=text value="мыть посуду" name="dislike" id='dislike' size="30"><br>
+        <input type=button value="Сформировать биографию" OnClick="hello()">
+        <hr>
     </form>
 </body>
-</html>
+
+</html> 
