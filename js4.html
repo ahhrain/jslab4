@@ -1,0 +1,62 @@
+<html>
+<head>
+    <style>
+        h1 {
+            color: red;
+            text-align: center;
+        }
+        
+        body {
+            margin-left: 10%;
+            margin-right: 10%;
+            background-color: PaleGreen;
+            font-weight: bold;
+        }
+        
+        input {
+            font-weight: bold;
+            padding: 5px;
+            margin-bottom: 3px;
+        }
+        
+        label {
+            float: left;
+            width: 200px;
+        }
+    </style>
+    <script>
+        function hello() {
+            var name = document.getElementById('name');
+            var friend = document.getElementById('friend');
+            var surpr = document.getElementById('surpr');
+            var like = document.getElementById('like');
+            name = name.value;
+            friend = friend.value;
+            surpr = surpr.value;
+            like = like.value;
+            var win = window.open("", "", "width=500,height=600");
+            win.document.open();
+            var str = ('<h2>' + name + " и " + surpr + '</h2>');
+            win.document.write(str);
+            str = ("В одном лесу жила маленькая " + name + ", которая очень любила " + like + " чудесные песни. У нее так хорошо получалось, что весь лес собирался послушать ее! От сороки она узнала, что у людей принято дарить " + surpr + " любимым исполнителям. А " + surpr + " она любила так же сильно, как и " + like + ". Долго грустила " + name + ". Но однажды, после очередного импровизированного концерта, " + friend + " подлетел к " + name + " и подарил ей..." + surpr + "! Уж он то был истинным джентльменом! " + name + ' была невероятно счастлива!!!<br>');
+            win.document.write(str);
+            str = '<input type="button" value="Закрыть"' +
+                'onClick="window.close();">';
+            win.document.write(str);
+            win.document.close();
+        }
+    </script>
+</head>
+<body>
+    <h1>Генератор сказок</h1>
+    <hr>
+    <form>
+       <label for="name">Имя </label><input type=text value="пташка" name="name" id='name' size="30"><br>
+       <label for="like">Любимое занятие </label><input type=text value="петь" name="like" id='like' size="30"><br>
+       <label for="friend">Друг героя</label> <input type=text value="дятел" name="friend" id='friend' size="30"><br>
+       <label for="surpr">Любимый подарок </label><input type=text value="цветы" name="surpr" id='surpr' size="30"><br>
+       <input type=button value="Генерировать сказку" OnClick="hello()">
+    <hr>
+    </form>
+</body>
+</html>
